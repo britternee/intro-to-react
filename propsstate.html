@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Update to My First React Component</title>
+  </head>
+  <body>
+     <div id="first"></div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+     <script type="text/babel">
+        class Intro extends React.Component {
+            constructor(props){
+                super(props);
+                this.state = {
+                    number: 8
+                }
+            }
+
+            render() {
+                return (
+                    <div>
+                        <img src={this.props.image} alt="User profile picture"/>
+                        <h1>Allow me to introduce {this.props.name}!</h1>
+                        <h3>This student is on week {this.state.number} of the Bloc Web Development program.</h3>
+                    </div>
+                );
+            }
+        }
+        
+        const detail = {
+            image: 'https://i.imgur.com/CGTh7Q3.jpg?',
+            name: 'Brittany',
+        }
+
+        ReactDOM.render(
+            <Intro
+                image={detail.image}
+                name={detail.name}/>, document.getElementById('first')
+        );
+     </script>
+  </body>
+</html>
