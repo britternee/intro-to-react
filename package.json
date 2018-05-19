@@ -1,0 +1,19 @@
+{
+  "name": "intro-to-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "hello": "node hello.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/britternee/intro-to-react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/britternee/intro-to-react/issues"
+  },
+  "homepage": "https://github.com/britternee/intro-to-react#readme"
+}
