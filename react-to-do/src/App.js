@@ -30,7 +30,14 @@ toggleComplete(index) {
   const todos = this.state.todos.slice();
   const todo = todos[index];
   todo.isCompleted = todo.isCompleted ? false : true;
-  this.setState({ todos: todos});
+  this.setState({ todos: todos });
+}
+
+deleteToDo(index) {
+  const todos = this.state.todos.slice();
+  const todo = todos[index];
+  const keepToDos = todos.filter((item) => item !== todo);
+  this.setState({ todos: keepToDos });
 }
 
   render() {
@@ -38,7 +45,7 @@ toggleComplete(index) {
       <div className="App">
         <ul>
           { this.state.todos.map( (todo, index) =>
-            <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) } />
+            <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) } deleteToDo={ () => this.deleteToDo(index) } />
           )}
         </ul>
         <form onSubmit={ (e) => this.handleSubmit(e) }>
